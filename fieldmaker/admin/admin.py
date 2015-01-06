@@ -2,7 +2,7 @@ import copy
 
 from django.contrib import admin
 from django.template.response import TemplateResponse
-from django.utils.functional import update_wrapper
+from functools import update_wrapper
 
 from fieldmaker.models import FormDefinition, GenericObjectStore
 from forms import ExpandableAdminModelForm, AdminFormDefinitionForm
@@ -54,7 +54,7 @@ class FormDefinitionAdmin(ExpandableModelAdmin):
     form = AdminFormDefinitionForm
     
     def get_urls(self):
-        from django.conf.urls.defaults import patterns, url
+        from django.conf.urls import patterns, url
         
         def wrap(view):
             def wrapper(*args, **kwargs):

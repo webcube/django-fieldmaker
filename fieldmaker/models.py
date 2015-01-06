@@ -4,7 +4,7 @@ from django.db import models
 from django.core.files.base import File
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
-from django.utils import simplejson
+import simplejson
 from django.utils.functional import lazy
 
 from resource import field_registry
