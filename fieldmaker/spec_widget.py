@@ -72,6 +72,7 @@ class FormWidget(widgets.Widget):
         if not initial_value and not data_value:
             return False
         if isinstance(data_value, dict):
+            if not initial_value: return True
             return not compare_dict(initial_value, data_value)
         if isinstance(data_value, list):
             return not compare_list(initial_value, data_value)
